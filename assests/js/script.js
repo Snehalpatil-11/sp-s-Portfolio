@@ -53,7 +53,7 @@ function(){
 
 // <!-- typed js effect starts -->
     var typed = new Typed(".typing-text", {
-        strings: ["Full-Stack development"],
+        strings: ["Frontend development"],
         loop: true,
         typeSpeed: 50,
 		backSpeed: 25,
@@ -92,7 +92,7 @@ var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
         .then(function (response) {
             console.log('SUCCESS!', response.status, response.text);
             document.getElementById("contact-form").reset();
-            alert("Form Submitted Successfully");
+            alert("Form Submitted Successy");
         }, function (error) {
             console.log('FAILED...', error);
             alert("Form Submission Failed! Try Again");
