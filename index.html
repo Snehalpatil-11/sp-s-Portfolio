@@ -364,7 +364,7 @@
       <!-- <script src="https://sheetdb.io/s/f/7v9alxz8mzn89.js"></script> -->
        
       <!-- <form action="      https://script.google.com/macros/s/AKfycbxrGZwsr-1uV6GkHPbBR8IsmApfksL8UCEokDi02F60Qcne2Zffpu-B8C34Ty8GzfHC/exec" method="post" > -->
-        <form action="https://script.google.com/macros/s/AKfycbznb2YHeVuZOfe2yRXLmlhel6RFhFeVc0-jkevMUspzBEeMEbBttQYkoNkAWvTL4kUQ/exec" method="post" >
+        <form action="https://script.google.com/macros/s/AKfycbw3IuTDP7RFDiVVrYW6AAkVQMCYPesVHe2DcbxPPQBe9RUWZg5MecerFyzkFyt1EfXu/exec" method="post" >
       <!-- <div class="form-group">
         <div class="field">
           <input type="text" name="name" placeholder="Name" required>
@@ -411,7 +411,7 @@
             <i class="fas fa-comment-dots"></i>
         </div>
         <div class="button-area">
-          <button onclick="alert('submitted succesfully')">Submit <i class="fa fa-paper-plane"></i></button>
+          <button type="submit">Submit <i class="fa fa-paper-plane"></i></button>
        
         </div>
 
@@ -419,6 +419,26 @@
     <!-- <div class="popup-message" id="popupMessage">Thank You!</div> -->
 </div>
 
+
+<script>
+ let form = document.querySelector("form");
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  let data = new FormData(form);
+  fetch('https://script.google.com/macros/s/AKfycbw3IuTDP7RFDiVVrYW6AAkVQMCYPesVHe2DcbxPPQBe9RUWZg5MecerFyzkFyt1EfXu/exec', {
+    method: "POST",
+    body: data
+  })
+  .then(res => {
+    alert("submitted successfully");
+    form.reset(); // Clear the form
+    return res.json(); // Process the response if needed
+  })
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error)); // Handle errors if any
+});
+
+</script>
 </section>
 <!-- contact section ends -->
 
